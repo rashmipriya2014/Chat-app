@@ -1,0 +1,98 @@
+<%- include('partials/welcome_header'); -%>
+  <div class="welcome_page">
+    
+    <div class="row">
+      <div class="tab col-md-3 pr-0">
+        <div class="profile_sidebar" class="tablinks" onclick="openChat(event,'profile_settings')" id="defaultOpen">
+          <img src="/images/profile1.jpg" width="110" height="110" alt="profile pic" />
+          <p><%= profileData.name%></p>
+        </div>
+        <%  allusers.forEach(function(user){ %> 
+              <button class="tablinks" onclick="openChat(event,'<%= user._id %>')">
+                <img src="/images/prof2.jpg"  class="img_frnds" width="50" height="50" alt="profile pic" />
+                <span class="txt_frns"><%= user.name %></span>
+              </button>
+        <%  }) %>          
+      </div>
+      <div class="col-md-9 rt_side pl-0">
+        <div id="profile_settings" class="tabcontent">          
+            <div class="setting_heading_wrap">
+              <i class="fa fa-gear" ></i> Account Settings
+            </div>
+            <div class="row profile_section">
+              <div class="col-md-4">
+                  <div class="prof_settg_img_wrap">
+                    <img src="/images/profile1.jpg"  alt="profile pic" />
+                  </div>
+              </div>
+              <div class="col-md-8">
+                <form class="form-horizontal form_acc_settg" method="post" action="">  
+                  <input type="hidden" namme="logged_in_user_id"  id="logged_in_user_id"  value="<%= profileData._id%>" />       
+                  <div class="form-group">
+                      <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                      <div class="cols-sm-10">
+                          <div class="input-group">                                            
+                              <input type="text" class="form-control" name="name" id="name" value="<%= profileData.name%>" placeholder="Enter your Name" />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                      <div class="cols-sm-10">
+                          <div class="input-group">                                            
+                              <input type="text" class="form-control" name="email" value="<%= profileData.email%>" id="email" placeholder="Enter your Email" />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="username" class="cols-sm-2 control-label">Username</label>
+                      <div class="cols-sm-10">
+                          <div class="input-group">
+                              <input type="text" class="form-control" name="username" id="username" value="<%= profileData.username%>" placeholder="Enter your Username" />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="password" class="cols-sm-2 control-label">Password</label>
+                      <div class="cols-sm-10">
+                          <div class="input-group">
+                              <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                          </div>
+                      </div>
+                  </div>                            
+                  <div class="form-group">
+                      <label for="gender" class="cols-sm-2 control-label">Gender</label>
+                      <div class="cols-sm-10">
+                          <div class="input-group">
+                              <select class="browser-default custom-select" name="gender">
+                                  <option>Male</option>
+                                  <option>Female</option>
+                              </select>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group text-right">
+                      <button type="submit" class="button_prmy">Save</button>
+                  </div>                               
+                </form>
+              </div>
+            </div>          
+        </div>
+        <%  allusers.forEach(function(user_del){ %>
+              <div id="<%= user_del._id %>" class="tabcontent">
+                <div class="setting_heading_wrap">
+                  <img src="/images/prof2.jpg"  class="img_frnds" width="50" height="50" alt="profile pic" />
+                  <span class="txt_frns"><%= user_del.name %></span>
+                </div>
+                <div class="chat_wrap" id="messages<%= user_del._id %>">
+                  <!--Append-->
+                </div>               
+                <div class="text_ar_wrap">
+                  <input id="txt_msg<%= user_del._id %>" autocomplete="off" autofocus="on" class="form-control" placeholder="type your message here..." /><button onclick="subMessage('<%= user_del._id %>','<%= profileData._id%>')"class="button_prmy ml-2">Send</button>
+                </div>               
+              </div>
+        <% }) %>
+      </div>
+    </div>      
+  </div>
+<%- include('partials/footer'); -%>
