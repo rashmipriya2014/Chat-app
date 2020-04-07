@@ -30,7 +30,7 @@ MongoDB url : mongodb://localhost:27017/chatApp
 ## Run on browser
 http://localhost:3001/
 
-## Some Screensort
+## Some Screenshot
 
 ![image](https://user-images.githubusercontent.com/36446909/78646284-72a56d80-78d6-11ea-807a-3a877c45588a.png)
 
