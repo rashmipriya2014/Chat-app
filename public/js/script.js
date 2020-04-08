@@ -37,6 +37,10 @@ function openChat(evt, cityName) {
         appendFriendMessage(data.message,data.from_id);
     });  
     
+    socket.on('typing-status'+loggedin_user_id,data_typing =>{
+        console.log(data_typing);
+        displayTypingStatus(data_typing.message,data_typing.from_id)
+    });  
 
     function subMessage(id,from_id){             
         var from_id = from_id;
@@ -61,6 +65,23 @@ function openChat(evt, cityName) {
                     '</div>';       
 
         $('#messages'+from_id).append(txt);
+        $('#typing_status'+from_id).html('');
+    }
+
+    function showStatusTyping(elm,to_id,from_id,from_name){
+        var inp_val = $(elm).val();
+        if(inp_val.length > 0){
+            var typing_message = from_name+' is typing ...';
+        }else{
+            var typing_message = ' ';
+        }
+        
+        socket.emit('send-typing-status',{'message':typing_message,'to_id':to_id,'from_id':from_id})
+    }
+    
+    function displayTypingStatus(msg,from_id){
+        $('#typing_status'+from_id).html(msg);
+        var inp_val = $('#txt_msg'+from_id).val();        
     }
 
 

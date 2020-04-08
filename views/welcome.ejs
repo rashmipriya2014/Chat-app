@@ -86,9 +86,12 @@
                 </div>
                 <div class="chat_wrap" id="messages<%= user_del._id %>">
                   <!--Append-->
-                </div>               
-                <div class="text_ar_wrap">
-                  <input id="txt_msg<%= user_del._id %>" autocomplete="off" autofocus="on" class="form-control" placeholder="type your message here..." /><button onclick="subMessage('<%= user_del._id %>','<%= profileData._id%>')"class="button_prmy ml-2">Send</button>
+                </div>                               
+                <div class="text_ar_wrap">  
+                  <div class="typng_stats" id="typing_status<%= user_del._id %>"></div>
+                  <div class="text_wrap">           
+                    <input id="txt_msg<%= user_del._id %>" oninput="showStatusTyping(this,'<%= user_del._id %>','<%= profileData._id%>','<%= profileData.name%>')" autocomplete="off" autofocus="on" class="form-control" placeholder="type your message here..." /><button onclick="subMessage('<%= user_del._id %>','<%= profileData._id%>')"class="button_prmy ml-2">Send</button>
+                  </div> 
                 </div>               
               </div>
         <% }) %>

@@ -26,6 +26,10 @@ io.on('connection', socket => {
         console.log(data);
         socket.broadcast.emit('chat-message'+data.to_id,data);
     });
+
+    socket.on('send-typing-status',typing_data=>{
+        socket.broadcast.emit('typing-status'+typing_data.to_id,typing_data);
+    });
 });
 
 
