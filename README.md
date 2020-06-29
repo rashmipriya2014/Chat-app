@@ -31,7 +31,6 @@ MongoDB url : mongodb://localhost:27017/chatApp
 http://localhost:3001/
 
 ## Some Screenshot
-
-![image](https://user-images.githubusercontent.com/36446909/78646284-72a56d80-78d6-11ea-807a-3a877c45588a.png)
+![image](https://user-images.githubusercontent.com/61490032/86042205-7293b480-ba64-11ea-8944-42ae9771e3f2.png)
 
 ![image](https://user-images.githubusercontent.com/36446909/78646992-90bf9d80-78d7-11ea-9130-5b178c700233.png)
