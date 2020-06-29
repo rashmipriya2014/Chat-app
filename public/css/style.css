@@ -1,4 +1,4 @@
-.custom-navbar{box-shadow: 10px 10px 10px #eee; z-index:9999;background-color: #fff;}
+.custom-navbar{ z-index:9999;background-color: #fff;}
 .nav-link{color: ##01143e!important;}
 .custom-toggler.navbar-toggler {border-color: #01143e;}
 .custom-toggler .navbar-toggler-icon {background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(247,32,78, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");}
@@ -319,4 +319,24 @@ body {font-family: "Lato", sans-serif;}
 .text_ar_wrap input{
   width: 100%;
   height: 40px;
+}
+.page_home_wrap{
+  background-image: url(/images/profile_side_theme.jpg);
+}
+.reg_form_cont{
+  background-color: #fff;  
+  
+}
+.reg_form_cont h4{
+  text-align: center;
+  padding-top:2%;
+  color:#01143e;
+}
+
+.hm_img img{
+  width:100%;
+  margin:2%;
+}
+.reg_form_cont .card-body{
+  padding:11px;
 }

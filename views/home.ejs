@@ -1,49 +1,28 @@
 <%- include('partials/header'); -%>
 <div class="page_home_wrap">
     <div class="row">
-        <div class="col-md-7">
-            <section class="slideshow">
-                <div class="slideshow-container slide">
-                  <img src="/images/slide1.jpg"/>
-                  <div class="text-container">
-                    <p class="slide_text"> Connecting with others gives us a sense of inclusion, connection, interaction, safety, and community. Your vibe attracts your tribe, so if you want to attract positive and healthy relationships, be one! Staying connected and getting reconnected feeds the flow of goodness which empowers our humanity</p>
-                  </div>
-                  <img src="/images/slide3.jpg"/>
-                  <img src="/images/slide2.jpg"/>
-                </div>
-            </section>  
-            <div class="feedback">
-                <div class="fdbk_head">Testimonial</div>                
-                <marquee behavior="scroll" direction="up">
-                    <% for (var i =1; i <=4;  i++ ) { %>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="/images/profile1.jpg" width="120" height="80" alt="Feedback" />
-                            </div>
-                            <div class="col-md-8">
-                                The journey of life is much about connections! One thing connects with another to bring another thing! When things get connected well, things work well!
-                            </div>
-                        </div>                    
-                    <% } %>                   
-                </marquee>                  
-            </div>            
+        <div class="col-md-8">            
+            <div class="hm_img">
+                <img class ="" src="/images/image-dm.png"  alt="Profile default" />
+            </div>
+            
         </div>
         <!-- Register wrap-->
-        <div class="col-md-5 regsiter_wrap">
+        <div class="col-md-4 regsiter_wrap">
             <div class="mt-3 mb-3 pr-3">                
-                <div class="card">
-                    <div class="card-header reg_wrap">Create an account</div>
+                <div class="reg_form_cont">  
+                    <h4 class="center inverse-text">Sign Up Now!</h4>                  
                     <div class="card-body">
                         <form class="form-horizontal" method="post" action="/register">
-                            <div class="text-center prof_default">
+                            <!-- <div class="text-center prof_default">
                                 <img class ="reg_profile_pic" src="/images/profile_default.png" width="200" height="200" alt="Profile default" />
                                 <div>
                                     <label for="upload-photo">
-                                        <img class="img_cam" src="/images/camera_default.png" width="40" height="35" alt="Profile default" />
+                                        <img class="img_cam" src="/images/cam_icon.jpg" width="40" height="35" alt="Profile default" />
                                     </label>
                                     <input type="file" name="photo" id="upload-photo" onchange="AddProfile(this)" />
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="name" class="cols-sm-2 control-label">Your Name</label>
                                 <div class="cols-sm-10">

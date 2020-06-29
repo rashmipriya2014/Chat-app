@@ -61,3 +61,6 @@ exports.welcomeUser = (req,res) =>{
         }
     });
 };
+
+// Update Profile
+
